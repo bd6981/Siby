@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+### Your group members and scrum leader (if applicable) 
+# Siby - Crime Spotter
+### Know before you go!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This website will provide info about crime incidents in various locations around 
+the United States. The site collects data from an API called CrimeOMeter/CrimeData. This API 
+collects data from police departments, news reports, and user submissions, and 
+displays it on an interactive map. Users can search for crime incidents in a specific 
+area and view details about the incidents. This app is intended to serve as a resource for 
+individuals to stay informed about crime in their communities and to help prevent crime.
 
-## Available Scripts
+![Screenshot 2022-12-23 at 10 57 43 AM](https://media.git.generalassemb.ly/user/45837/files/54f5670c-d1e6-4bf1-acf4-9506baee0eb2)
+![Screenshot 2022-12-23 at 12 21 27 AM](https://media.git.generalassemb.ly/user/45837/files/c1205f93-82be-4050-b5b6-1fd923f0cc6a)
+![Screenshot 2022-12-23 at 12 21 39 AM](https://media.git.generalassemb.ly/user/45837/files/73049337-de91-481e-b7a7-404520befc26)
+![Screenshot 2022-12-23 at 3 37 13 AM](https://media.git.generalassemb.ly/user/45837/files/f86aa382-eefb-4fa4-b8a7-5aa2debc7f53)
 
-In the project directory, you can run:
+### Your tech stack (frontend, backend, database)
+## Tech Stack
 
-### `npm start`
+- Client: React
+- Backend: Express & Mongo DB-> |Strictly for user auth| |db for Firebase and Auth middleware|
+- Hosting on: Firebase
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-UserAuth: Firebase (method GmailAuth)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Geocoding Google Api
+    -cloud account created
 
-### `npm test`
+- CrimeData Api 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Hierarchy
+ --App.js
+ --Nav.js
+ --Header.js
+ --Footer.js
+ --.env
+ --Crime.js
+ --Map.js
+ --Info.js
+ --Model.js
+ --FireAuth.js
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Environment Variables
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run this project, you will need to add the following environment variables to your .env file
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`API_KEY`
 
-### `npm run eject`
+`FIREBASE_KEY`
+### List of backend models and their properties
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### React component hierarchy (if applicable)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### User stories
+## As A User Stories
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- AAU, I want to be able to see a map of recent crime incidents in the area I'm in or the area I'm going.
+- AAU, I want the App to be User Friendly.
+- AAU, I want to be able to click on the crime pointer and a model pop up with that incident data appearing.
+- AAU, I want to know before I go. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Mvp
+- Functionality:
+    - User Auth (google)
+    - Search bar for city
+    - Search locates user to destination 
+    - Map renders api crime activity
+    - Click on target in map and render data in a model
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Design: 
+    - Design that is functional and visually appealing
+    - Color schema/ Layout
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Content: 
+    - Content has value to user
+    - About / How to : Website is easily understandable
 
-### Code Splitting
+- Performance:
+    - Requests load without downtime or error 
+ 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## POST - Mvp
+- Host on Firebase 
+- Implement optional user share location for map services
+- Implement Kubernetes Api through cloud
 
-### Analyzing the Bundle Size
+## FAQ-- Info.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Why Siby --Crime Spotter--
 
-### Making a Progressive Web App
+While working with a large telecom company, I was held a gun point and robbed. When the barrel of a gun is touching your forehead, thinking is hard. I did what they asked and ran when given the chance. The next 
+acts will be a complete blur for a lot of people. For some its four words on repeat, Run, Hide, Safe, Call. The customer and I locked all doors and hide in the bathroom. The police arrived around five minutes after calling 911. There, the customer and I were informed there had been three shootings in the past week with one being fatal. No one was ever caught. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Why isn't this easy info to access.
+- Why are new residence being made aware of this info? 
+- Why are employers not implementing safety measures on 'informed locations stats', they're sending their employees to?
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### This App is for You, Your Family, Your loved Ones! 
+#### This App is for Employers to do everything they can to insure their Employees are informed and safe.  
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### That is Why Siby!
