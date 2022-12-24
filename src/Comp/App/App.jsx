@@ -1,11 +1,11 @@
 import './App.css';
-import Header from './Header'
-import Crime from './Crime'
-import Info from './Info'
-import Map from './Map'
-import Model from './Model'
-import Nav from './Nav'
-import Footer from './Footer'
+import Header from '../Header/Header'
+import Crime from '../Crime/Crime'
+import Info from '../Info/Info'
+import Map from '../Map/Map'
+import Model from '../Model/Model'
+import Nav from '../Nav/Nav'
+import Footer from '../Footer/Footer'
 
 
 function App() {

@@ -86,19 +86,7 @@ To run this project, you will need to add the following environment variables to
 - Implement optional user share location for map services
 - Implement Kubernetes Api through cloud
 
-## FAQ-- Info.js
-
-### Why Siby --Crime Spotter--
-
-While working with a large telecom company, I was held a gun point and robbed. When the barrel of a gun is touching your forehead, thinking is hard. I did what they asked and ran when given the chance. The next 
-acts will be a complete blur for a lot of people. For some its four words on repeat, Run, Hide, Safe, Call. The customer and I locked all doors and hide in the bathroom. The police arrived around five minutes after calling 911. There, the customer and I were informed there had been three shootings in the past week with one being fatal. No one was ever caught. 
-
-- Why isn't this easy info to access.
-- Why are new residence being made aware of this info? 
-- Why are employers not implementing safety measures on 'informed locations stats', they're sending their employees to?
 
 
-#### This App is for You, Your Family, Your loved Ones! 
-#### This App is for Employers to do everything they can to insure their Employees are informed and safe.  
-
-### That is Why Siby!# Siby
+#Installation:
+npm install react-icons --save
