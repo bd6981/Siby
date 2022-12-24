@@ -1,11 +1,4 @@
 import React from 'react'
-
-const Footer = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default Footer
+import "./Footer.css"
+import {BsGithub} from "react-icon/bs"
+import {AiOutlineLinkedin} from 'react-icons/ai'
