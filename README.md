@@ -90,3 +90,5 @@ To run this project, you will need to add the following environment variables to
 
 #Installation:
 npm install react-icons --save
+npm install --save google-map-react
+https://react-google-maps-api-docs.netlify.app/

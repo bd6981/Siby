@@ -9,3 +9,4 @@ const Crime = () => {
 }
 
 export default Crime
+

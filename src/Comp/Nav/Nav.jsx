@@ -9,9 +9,9 @@ const Nav = () => {
   const [activeNav, setActiveNav] = useState("#")
   return (
     <nav>
-      <a href="#" onClick= {() => setActiveNav('#')} className={activeNav === "#" ? 'active' : ''}><AiTwotoneHome/></a>
-      <a href="#Info" onClick= {() => setActiveNav('#Info')} className={activeNav === '#Info' ? 'active' : ''}><BiUserPin/></a>
-      <a href="#Account" onClick= {() => setActiveNav('#Account')} className={activeNav === '#Account' ? 'active' : ''}><BiBook/></a>
+      <a onClick= {() => setActiveNav('#')} className={activeNav === "#" ? 'active' : ''}><AiTwotoneHome/></a>
+      <a onClick= {() => setActiveNav('#Info')} className={activeNav === '#Info' ? 'active' : ''}><BiUserPin/></a>
+      <a onClick= {() => setActiveNav('#Account')} className={activeNav === '#Account' ? 'active' : ''}><BiBook/></a>
     </nav>
   )
 }

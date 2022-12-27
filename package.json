@@ -3,14 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@googlemaps/js-api-loader": "github:googlemaps/js-api-loader",
+    "@mapbox/point-geometry": "github:mapbox/point-geometry",
+    "@react-google-maps/api": "^2.17.1",
+    "@react-icons/all-files": "^4.1.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.2.1",
+    "eventemitter3": "^5.0.0",
+    "google-map-react": "^2.2.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-simple-maps": "^3.0.0",
+    "react-top-loading-bar": "^2.3.1",
+    "web-vitals": "^2.1.4",
+    "yarn": "^1.22.19"
   },
   "scripts": {
     "start": "react-scripts start",
