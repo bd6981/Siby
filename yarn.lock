@@ -4954,6 +4954,11 @@
     "merge2" "^1.4.1"
     "slash" "^3.0.0"
 
+"google-map-marker@^1.2.3":
+  "integrity" "sha512-yQJiTjv/ZB98io3BAUmdCdeoh4A0CLbnQL4k+rIqwYQbnTzGnx+UASLraJdnnBL8T5AQhLkbHTebjvBO6rFBWA=="
+  "resolved" "https://registry.npmjs.org/google-map-marker/-/google-map-marker-1.2.3.tgz"
+  "version" "1.2.3"
+
 "google-map-react@^2.2.0":
   "integrity" "sha512-UPiTwR3qNKJJizURXTuCbnBr8kLtLsiikj/KH1UTLGhadnU6fT+CE3CLw1lzZwk5zZIduQQODyIcEwNInECmUg=="
   "resolved" "https://registry.npmjs.org/google-map-react/-/google-map-react-2.2.0.tgz"

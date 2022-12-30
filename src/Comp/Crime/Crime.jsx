@@ -1,12 +1,13 @@
 import React from 'react'
+// import 
 
-const Crime = () => {
-  return (
-    <div>
+// const Crime = () => {
+//   return (
+//     <div>
       
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
-export default Crime
+// export default Crime
 
