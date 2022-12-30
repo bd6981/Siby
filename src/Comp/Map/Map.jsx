@@ -29,6 +29,10 @@ function MyMap() {
   const onLoad = React.useCallback(function callback(aMap) {
     const bounds = new window.google.maps.LatLngBounds(center);
     map.fitBounds(bounds);
+    const markers = new google.maps.marker({
+      position: CanvasPattern,
+      map: map,
+    })
 
     setMap(aMap)
   }, [])
@@ -36,10 +40,6 @@ function MyMap() {
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null)
   }, [])
-
-
-
-
 
 
   return isLoaded ? (
