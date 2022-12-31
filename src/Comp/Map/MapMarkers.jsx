@@ -1,26 +1,49 @@
+// import markers from '../../crimeData.json'
+// import React, { useState } from 'react'
+// import { GiPositionMarker } from 'react-icons/gi'
 
-import markers from '../../crimeData.json'
-const mapOptions = {
+// export default function MapMarker(color, z, size) {
+    
+//     const [marker, setMarker] = useState(markers)
 
-center: new google.maps.LatLng(33.71, -84.35),
-mapTypeId: google.maps.MapTypeId.ROADMAP
-};
-const infoWindow = new google.maps.InfoWindow();
-const map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+ 
+   
+//     return (
+//         <div>
+       
+//             <div
+                
+//                 onClick={() => { setMarker(marker) }}
+//             >
+                 
+               
+//                 <div className='pin'>
+//                     <GiPositionMarker
+//                         icon={'mdi:map-marker'}
+//                         className='markr'
+//                         onClick={() => { setMarker(marker) }}
+                        
+//                         style={{ position: 'relative', color: `rgb(${color})`, zIndex: `${z}`, fontSize: `${size}` }}
+//                     />
+                
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
+import React from 'react'
+import { Icon } from '@iconify/react'
+import './Map.css'
 
-for (i = 0; i < markers.length; i++) {
-const data = markers[i]
-const myLatlng = new google.maps.LatLng(data.lat, data.long);
-const marker = new google.maps.Marker({
-position: myLatlng,
-map: map,
-title: data.UC2_Literal
-});
-(function(marker, data) {
-// Attaching a click event to the current marker
-google.maps.event.addListener(marker, "click", function(e) {
-infoWindow.setContent(data.UC2_Literal);
-infoWindow.open(map, marker);
-});
-})(marker, data);
+
+
+const MapMarkers = ({lat, lng, onClick}) => {
+  return (
+      <div className='mapMarker' onClick={onClick}>
+          <Icon icon="uil:map-marker" className='locateIcon'/>
+      
+    </div>
+  )
 }
+
+export default MapMarkers

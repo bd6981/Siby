@@ -1,3 +1,9 @@
-#map {
-    height: 100%;
+.map {
+    height: 70vh;
+    width: 99.5vw;
+    position: relative;
   }
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
