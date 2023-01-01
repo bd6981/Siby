@@ -21,7 +21,7 @@ const InfoBox = () => {
                 <li>NEIGHBORHOOD: <strong>{info.neighborhood}</strong></li>
                 <li>NPU: <strong>{info.npu}</strong></li>
                 <li>LATITUDE: <strong>{info.lat}</strong></li>
-                <li>ID: <strong>{info.lng}</strong></li>
+                <li>LONGITUDE: <strong>{info.lng}</strong></li>
             </ul>
         </div>
 
