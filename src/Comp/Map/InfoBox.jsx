@@ -18,7 +18,7 @@ const InfoBox = () => {
                 <li>LOCATION: <strong>{info.location}</strong></li>
                 <li>IBR CODE: <strong>{info.ibr_code}</strong></li>
                 <li>CRIME: <strong>{info.name}</strong></li>
-                <li>ID: <strong>{info.neighborhood}</strong></li>
+                <li>NEIGHBORHOOD: <strong>{info.neighborhood}</strong></li>
                 <li>ID: <strong>{info.npu}</strong></li>
                 <li>ID: <strong>{info.lat}</strong></li>
                 <li>ID: <strong>{info.lng}</strong></li>
