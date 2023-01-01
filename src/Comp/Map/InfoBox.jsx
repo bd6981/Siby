@@ -17,7 +17,7 @@ const InfoBox = () => {
                 <li>ID: <strong>{info.zone}</strong></li>
                 <li>ID: <strong>{info.location}</strong></li>
                 <li>ID: <strong>{info.ibr_code}</strong></li>
-                <li>ID: <strong>{info.zone}</strong></li>
+                <li>ID: <strong>{info.name}</strong></li>
                 <li>ID: <strong>{info.zone}</strong></li>
                 <li>ID: <strong>{info.zone}</strong></li>
             </ul>
