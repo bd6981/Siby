@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { Icon } from '@iconify/react';
 import './Map.css';
 import crimeData from '../../crimeData.json';
+import InfoBox from './InfoBox'
 
  const MapContainer = styled.div`
   width: 100vw;
@@ -28,7 +29,7 @@ import crimeData from '../../crimeData.json';
 // `;
 // import '../../crimeData.json'
 
-function Marker({ children }) {
+function Marker ({ children }) {
   return <Icon>{children}</Icon>;
 }
 export default function GMap() {
@@ -57,9 +58,11 @@ export default function GMap() {
     
     },[])
   const [icons, setIcons] = useState(crimeData);
+  const [infoBox, setInfoBox] = useState(null)
+   
   const show = (name) => {
-    setIcons(crimeData.filter((item) => item.name === name));
-  };
+    setIcons(crimeData.filter((item) => item.name === name))};
+    
 
   return (
     <>
@@ -71,12 +74,15 @@ export default function GMap() {
             <Icon icon="uil:map-marker" className='locateIcon'
               key={crime.id}
               lat={crime.lat}
-              lng={crime.lng}>
+              lng={crime.lng}
+              onClick = {setInfoBox}>
+             
             
               {/* {crime.name} */}
             </Icon>
           )))} 
         </GoogleMapReact>
+        {infoBox && <InfoBox info={infoBox} /> }
       </MapContainer>
     </>
   );
