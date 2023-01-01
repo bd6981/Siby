@@ -11,57 +11,53 @@ import InfoBox from './InfoBox'
   width: 100vw;
   height: 100vh;
 `;
-// const Wrapper = styled.div`
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   width: 18px;
-//   height: 18px;
-//   background-color: #000;
-//   border: 2px solid #fff;
-//   border-radius: 100%;
-//   user-select: none;
-//   color: #fff;
-//   transform: translate(-50%, -50%);
-//   &:hover {
-//     z-index: 1;
-//   }
-// `;
-// import '../../crimeData.json'
+
 
 function Marker ({ children }) {
   return <Icon>{children}</Icon>;
 }
-export default function GMap() {
-  const [data, setData] = useState([]);
-  const getData = () => {
-    fetch('crimeData.json'
-    ,{
-      header:{
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
 
-      }
-    }
-    )
-    .then(function(response){
-      console.log(response)
-      return response.json();
-    })
-    .then(function(myJson) {
-      console.log(myJson);
-      setData(myJson)
-    });
-  }
+
+  
+export default function GMap() {
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
+  const [q, setQ] = useState("")
+  const [searchParam] = useState(["occur_date"])
+  const [data, setData] = useState([]);
   useEffect(() => {
-    getData()
+    fetch("crimeData.json"
+      , {
+        header: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+
+        }
+      }
+    )
+        .then((res) => res.json())
+        .then(
+          (result) => {
+            setIsLoaded(true);
+            setData(result);
+          },
+          (error) => {
+            setIsLoaded(true);
+            setError(error);
+          }
+        );
+  }, []);
+
     
-    },[])
+    
   const [icons, setIcons] = useState(crimeData);
   const [infoBox, setInfoBox] = useState(null)
    
   const show = (name) => {
-    setIcons(crimeData.filter((item) => item.name === name))};
+    setIcons(crimeData.filter((item) => item.name === name))
+  };
+  
     
 
   return (
@@ -70,6 +66,7 @@ export default function GMap() {
       <MapContainer>
         <GoogleMapReact bootstrapURLKeys={{ key: process.env.MY_API_KEY }}
           zoom={10} center={[33.716073, -84.353217]}>
+          
           {icons.map((crime => (
             <Icon icon="uil:map-marker" className='locateIcon'
               key={crime.id}
