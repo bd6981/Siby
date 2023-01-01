@@ -4,7 +4,7 @@ import {BiUserPin} from 'react-icons/bi'
 import {AiTwotoneHome} from 'react-icons/ai'
 import {FcAbout} from 'react-icons/fc'
 import { useState } from 'react'
-import Info from '../Info/Info'
+import Info from './Info'
 import { Link } from "react-router-dom";
 
 const Nav = () => {
