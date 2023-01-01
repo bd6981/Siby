@@ -1,23 +1,47 @@
 import './App.css';
 import Header from '../Header/Header'
-import Map from '../Map/Map'
+import GMap from '../Map/GMap'
 import Model from '../Model/Model'
 import Nav from '../Nav/Nav'
 import Footer from '../Footer/Footer'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+// import '../../crimeData.json'
 
 
 function App() {
-  const [eventData, setEventData] = useState([])
-  const [loading, setLoading] = useState(false)
+//   const [data, setData] = useState([]);
+//   // const [loading, setLoading] = useState(false)
+//   const getData = () => {
+//     fetch('crimeData.json'
+//     ,{
+//       header:{
+//         Accept: 'application/json',
+//         'Content-Type': 'application/json'
 
+//       }
+//     }
+//     )
+//     .then(function(response){
+//       console.log(response)
+//       return response.json();
+//     })
+//     .then(function(myJson) {
+//       console.log(myJson);
+//       setData(myJson)
+//     });
+//   }
+//   useEffect(() => {
+//     getData()
+    
+//     },[])
    
   
   return (
     <div className="App">
-      <Header/>
-      <Map>
-      </Map>
+      <Header />
+      {/* {!loading ? <GMap eventData={eventData} /> : <h1>Loading</h1>} */}
+      <GMap>
+      </GMap>
       <Model/>
       <Nav/>
       <Footer/>
