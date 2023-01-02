@@ -8,6 +8,7 @@ import { useMainContext } from '../Map/Hooks/Hooks'
 import crimes from '../../Data.json';
 import { Icon } from '@iconify/react';
 import robberIcon from '@iconify/icons-game-icons/robber';
+import { InfoBox } from './InfoBox';
 
 
 export default function GMap({ center, eventData, lat, lng }) {
@@ -113,7 +114,7 @@ export default function GMap({ center, eventData, lat, lng }) {
                key={`crime-${cluster.properties.crimeName}`}
               lat={latitude}
               lng={longitude}>
-              <button className="crime-marker">
+              <button className="crime-marker" onClick={<InfoBox />}>
                 <Icon icon={robberIcon} alt="crime isnt good" /></button>
             </Marker>
           );
