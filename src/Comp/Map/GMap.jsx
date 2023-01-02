@@ -100,7 +100,7 @@ export default function GMap() {
         </div>
         <div style={{ height: '100vh', width: '100%' }}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: "AIzaSyASOBWDB37dVk_DJ-EH72MhhVwD4eJLwiM" }}
+            bootstrapURLKeys={{ key: process.env.MY_API_KEY }}
             defaultCenter={defaultProps.center}
             defaultZoom={defaultProps.zoom}>
            
