@@ -38,7 +38,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* {!loading ? <GMap eventData={eventData} /> : <h1>Loading</h1>} */}
       {!loading ? <GMap eventData={renderEvent} /> : <Loader />}
       <Model/>
       <Nav/>
