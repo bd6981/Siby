@@ -8,13 +8,13 @@ body {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
 }
-.map-cluster{
-  color: white;
-  background-color: aqua;
+
+	.cluster-marker {
+  color: #fff;
+  background: #1978c8;
   border-radius: 50%;
   padding: 10px;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-
 }

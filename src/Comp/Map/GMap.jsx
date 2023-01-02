@@ -19,7 +19,7 @@ export default function GMap({ center, eventData, lat, lng }) {
   const [loading, setLoading] = useState(false)
   const [renderEvent, setRenderEvent] = useState([])
   const Marker = ({ children }) => children;
-
+  const { REACT_APP_GOOGLE_MAPS_API_KEY } = process.env;
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -61,7 +61,7 @@ export default function GMap({ center, eventData, lat, lng }) {
   return (
     <div className='map-main' style={{ height: '100vh', width: '100%' }}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyDaVj27ZcB7X34rvYWlr1kPFiBkUKTNO0o" }}
+        bootstrapURLKeys={{ key: REACT_APP_GOOGLE_MAPS_API_KEY }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
         yesIWantToUseGoogleMapApiInternals
