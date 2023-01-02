@@ -16,24 +16,24 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [renderEvent, setRenderEvent] = useState([])
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      setLoading(true)
-      const response = await fetch("../../Data.json");
-      if (!response.ok) {
-        const message = `An error has occured: ${response.status}`;
-        throw new Error(message);
-      }
-      const crimeData = await response.json()
-      setEventData(crimeData)
-      setRenderEvent(crimeData)
-      setLoading(false)
-    }
-    fetchEvents();
-    console.log(crimeData)
+  // useEffect(() => {
+  //   const fetchEvents = async () => {
+  //     setLoading(true)
+  //     const response = await fetch("../../Data.json");
+  //     if (!response.ok) {
+  //       const message = `An error has occured: ${response.status}`;
+  //       throw new Error(message);
+  //     }
+  //     const crimeData = await response.json()
+  //     setEventData(crimeData)
+  //     setRenderEvent(crimeData)
+  //     setLoading(false)
+  //   }
+  //   fetchEvents();
+  //   console.log(crimeData)
       
 
-       },[])
+  //      },[])
 
   return (
     <div className="App">
