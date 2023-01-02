@@ -10,6 +10,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "asyncawait": "^3.0.0",
     "axios": "^1.2.1",
     "dotenv": "^16.0.3",
     "eventemitter3": "^5.0.0",
@@ -56,6 +57,7 @@
   },
   "devDependencies": {
     "@iconify/icons-emojione": "^1.2.5",
+    "@iconify/icons-game-icons": "^1.2.1",
     "@iconify/react": "^4.0.1"
   }
 }

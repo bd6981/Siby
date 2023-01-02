@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './Comp/App/App';
-import {ContextProvider} from './Comp/Map/Hook/Hook'
+import {ContextProvider} from './Comp/Map/Hooks/Hooks'
 
 
 ReactDOM.render(
