@@ -40,8 +40,7 @@ function App() {
     <div className="App">
       <Header />
       {/* {!loading ? <GMap eventData={eventData} /> : <h1>Loading</h1>} */}
-      <GMap>
-      </GMap>
+      <GMap/>
       <Model/>
       <Nav/>
       <Footer/>
