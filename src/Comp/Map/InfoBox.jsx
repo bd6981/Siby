@@ -18,28 +18,28 @@ const InfoBox = ({info}) => {
         
         <div>
             <ul>
-            <li>CRIME: <strong>{info.title}</strong></li>
-            <li>ID: <strong>{info.id}</strong></li>
+            <p>CRIME: <strong>{info.title}</strong></p>
+            <p>ID: <strong>{info.id}</strong></p>
             
-            <li>DATE: <strong>{info.date}</strong></li>
-            <li>OCCURED ON A: <strong>{info.day}</strong></li>
+            <p>DATE: <strong>{info.date}</strong></p>
+            <p>OCCURED ON A: <strong>{info.day}</strong></p>
             
-            <li>TIME: <strong>{info.time}</strong></li>
-            <li>ON SCENE DATE: <strong>{info.osdate}</strong></li>
-            <li>ON SCENE TIME: <strong>{info.ostime}</strong></li>
-            <li>BEAT: <strong>{info.beat}</strong></li>
-            <li>ZONE: <strong>{info.zone}</strong></li>
-            <li>LOCATION: <strong>{info.location}</strong></li>
-            <li>IBR CODE: <strong>{info.ibr}</strong></li>
+            <p>TIME: <strong>{info.time}</strong></p>
+            <p>ON SCENE DATE: <strong>{info.osdate}</strong></p>
+            <p>ON SCENE TIME: <strong>{info.ostime}</strong></p>
+            <p>BEAT: <strong>{info.beat}</strong></p>
+            <p>ZONE: <strong>{info.zone}</strong></p>
+            <p>LOCATION: <strong>{info.location}</strong></p>
+            <p>IBR CODE: <strong>{info.ibr}</strong></p>
             
-            <li>NEIGHBORHOOD: <strong>{info.neighborhood}</strong></li>
+            <p>NEIGHBORHOOD: <strong>{info.neighborhood}</strong></p>
             
 
             </ul>
         </div>
         <footer>
          
-          <button variant="primary" onClick={handleClose}>
+          <button variant="primary" onCpck={handleClose}>
             Close
           </button>
         </footer>
