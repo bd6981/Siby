@@ -60,7 +60,10 @@ export default function GMap({ center, eventData, lat, lng }) {
       "crimeBeat": crime.beat,
       "crimeZone": crime.zone,
       "crimeLocation": crime.location,
-      "crimeNPU": crime.npu,
+      "crimeIBR": crime.ibr,
+      "crimeOsDate": crime.osdate,
+      "crimeOsTime": crime.ostime,
+      "crimeNeighborhood": crime.neighborhood,
      
     },
     geometry: { type: "Point", coordinates: [parseFloat(crime.longitude), parseFloat(crime.latitude)] }
@@ -134,7 +137,7 @@ export default function GMap({ center, eventData, lat, lng }) {
               lng={longitude}>
               <button className="crime-marker" 
               onClick = {() => {
-                setInfoBox({id: cluster.properties.crimeId, title: cluster.properties.crimeTitle, date: cluster.properties.crimeDate, day: cluster.properties.crimeDay, time: cluster.properties.crimeTime, beat: cluster.properties.crimeBeat, zone: cluster.properties.crimeZone, location: cluster.properties.crimeLocation, npu: cluster.properties.crimeNPU })
+                setInfoBox({id: cluster.properties.crimeId, title: cluster.properties.crimeTitle, date: cluster.properties.crimeDate, day: cluster.properties.crimeDay, time: cluster.properties.crimeTime, beat: cluster.properties.crimeBeat, zone: cluster.properties.crimeZone, location: cluster.properties.crimeLocation, ibr: cluster.properties.crimeIBR, osdate: cluster.properties.crimeOsDate , ostime: cluster.properties.crimeOsTime , neighborhood: cluster.properties.crimeNeighborhood , })
               }}>
                 <Icon icon={robberIcon} alt="crime isnt good" ></Icon>
               </button>
