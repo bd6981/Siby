@@ -1,17 +1,25 @@
 import React from 'react'
-import { Icon } from '@iconify/react';
-import robberIcon from '@iconify/icons-game-icons/robber';
-import keyCard from '@iconify/icons-game-icons/key-card';
-import crimeSceneTape from '@iconify/icons-game-icons/crime-scene-tape';
+import "../../aa.png"
+import "../../bur.png"
+import "../../car.png"
+import "../../h.png"
+import "../../rob.png"
+import "../../theft.png"
 
 
 const MapMarker = (lat, lng, onClick, name) => {
     let renderIcon = null;
-    if (name === "BURGLARY")
+    if (title === "BURGLARY")
         renderIcon = robberIcon;
-    else if (name === "AUTO THEFT")
+    else if (title === "AUTO THEFT")
         renderIcon = keyCard;
-    else if (name === "HOMICIDE")
+    else if (title === "HOMICIDE")
+        renderIcon = crimeSceneTape;
+        else if (title === "HOMICIDE")
+        renderIcon = crimeSceneTape;
+        else if (title === "HOMICIDE")
+        renderIcon = crimeSceneTape;
+        else if (title === "HOMICIDE")
         renderIcon = crimeSceneTape;
     
   return (

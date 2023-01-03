@@ -35,7 +35,8 @@ const InfoBox = ({info}) => {
 
             
         </div>
-        
+       
+
       </div>
     </>        
 
