@@ -8,13 +8,19 @@ import { useMainContext } from '../Map/Hooks/Hooks'
 import crimes from '../../Data.json';
 import { Icon } from '@iconify/react';
 import robberIcon from '@iconify/icons-game-icons/robber';
-import { InfoBox } from './InfoBox';
+import  InfoBox  from './InfoBox';
+
+
 
 
 export default function GMap({ center, eventData, lat, lng }) {
+    
+   const [show, setShow] = useState(false);
+   const handleShow = () => setShow(true);
   const [zoom, setZoom] = useState(1);
   const mapRef = useRef();
   const [bounds, setBounds] = useState(null)
+  const [infoBox, setInfoBox] = useState(null)
 
   const { setEventData, reRenderMarkers } = useMainContext();
   const [loading, setLoading] = useState(false)
@@ -46,7 +52,8 @@ export default function GMap({ center, eventData, lat, lng }) {
     "type": "Feature",
     "properties": {
       "cluster": false,
-      "crimeKey": crime.name
+      "crimeKey": crime.id,
+      "crimeTitle": crime.title
     },
     geometry: { type: "Point", coordinates: [parseFloat(crime.longitude), parseFloat(crime.latitude)] }
   }))
@@ -60,7 +67,7 @@ export default function GMap({ center, eventData, lat, lng }) {
 
   
   return (
-    <div className='map-main' style={{ height: '100vh', width: '100%' }}>
+    <div className='map-main' >
       <GoogleMapReact
         bootstrapURLKeys={{ key: REACT_APP_GOOGLE_MAPS_API_KEY }}
         defaultCenter={defaultProps.center}
@@ -77,7 +84,10 @@ export default function GMap({ center, eventData, lat, lng }) {
             bounds.se.lng,
             bounds.nw.lat
           ]);
-        }}>
+        }}
+        onClick={() => {setInfoBox(null)}}
+        onDrag={() => {setInfoBox(null)}}
+        >
         {clusters.map(cluster => {
           const [longitude, latitude] = cluster.geometry.coordinates;
           const {
@@ -111,27 +121,34 @@ export default function GMap({ center, eventData, lat, lng }) {
           }
           return (
             <Marker
-               key={`crime-${cluster.properties.crimeName}`}
+              key={`crime-${cluster.properties.crimeId}`}
               lat={latitude}
               lng={longitude}>
-              <button className="crime-marker" onClick={<InfoBox />}>
-                <Icon icon={robberIcon} alt="crime isnt good" /></button>
+              <button className="crime-marker" 
+              onClick = {() => {
+                setInfoBox({id: cluster.properties.crimeId, title: cluster.properties.crimeTitle})
+              }}>
+            
+              
+                <Icon icon={robberIcon} alt="crime isnt good" ></Icon>
+              </button>
             </Marker>
           );
         })}
         
 
       </GoogleMapReact>
+      {infoBox && <InfoBox className="infoBox" info={infoBox}/>}
         
     </div>
   )
-}
-      
+
+      }    
     
   const defaultProps = {
     center: {
       lat: 33.716073, 
       lng: -84.353217
     },
-    zoom: 10
+    zoom: 11
   };
