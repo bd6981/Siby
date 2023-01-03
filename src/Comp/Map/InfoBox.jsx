@@ -8,7 +8,7 @@ const InfoBox = ({info}) => {
   return (
     <>
       <div className="infoBox">
-        <header>Crime Info</header>
+        <h2>Crime Info</h2>
           <div>
             <p>CRIME: <strong>{info.title}</strong></p>
             <p>ID: <strong>{info.id}</strong></p>

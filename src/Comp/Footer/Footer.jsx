@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className='footer'>
             <div className='footer-container'>
                 <div className='item2'>
-                    <p>Brittany Davis</p>
+                    <p>Created by: Brittany Davis</p>
                     <a href='http://github.com/bd6981'
                     target='_blank'
                     className='item1'><GoMarkGithub/></a>

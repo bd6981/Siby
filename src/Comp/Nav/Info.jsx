@@ -1,14 +1,12 @@
-import React from 'react'
-
-const Info = () => {
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+function Info(props) {
   return (
-    <div>
-      this is the info 
-    </div>
+    <div>hey</div>
   )
 }
-
 export default Info
+
   // useEffect(() => {
   //   fetch("crimeData.json"
   //     , {

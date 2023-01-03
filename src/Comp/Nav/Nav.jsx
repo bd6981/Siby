@@ -9,12 +9,11 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [activeNav, setActiveNav] = useState("#")
+  const [modalShow, setModalShow] = React.useState(false);
+  
   return (
     <nav>
       <a href="Intro" onClick= {() => setActiveNav('Info')} className={activeNav === '/Info' ? 'Info' : ''}><FcAbout size={35}/></a>
-      {/* <a onClick= {() => setActiveNav('#')} className={activeNav === "#" ? 'active' : ''}><AiTwotoneHome/></a> */}
-    
-      {/* <Link exact path ="/Info" element= {<Info />}><BiUserPin/></Link> */}
       
     </nav>
   )
