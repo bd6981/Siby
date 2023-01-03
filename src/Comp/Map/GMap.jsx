@@ -14,9 +14,8 @@ import  InfoBox  from './InfoBox';
 
 
 export default function GMap({ center, eventData, lat, lng }) {
-    
-   const [show, setShow] = useState(false);
-   const handleShow = () => setShow(true);
+  
+ 
   const [zoom, setZoom] = useState(1);
   const mapRef = useRef();
   const [bounds, setBounds] = useState(null)
@@ -42,7 +41,7 @@ export default function GMap({ center, eventData, lat, lng }) {
       setLoading(false)
     }
     fetchEvents(crimes);
-    // console.log(crimes)
+   
     
       
 
@@ -98,6 +97,8 @@ export default function GMap({ center, eventData, lat, lng }) {
         }}
         onClick={() => {setInfoBox(null)}}
         onDrag={() => {setInfoBox(null)}}
+        
+       
         >
         {clusters.map(cluster => {
           const [longitude, latitude] = cluster.geometry.coordinates;
@@ -147,7 +148,8 @@ export default function GMap({ center, eventData, lat, lng }) {
         
 
       </GoogleMapReact>
-      {infoBox && <InfoBox className="infoBox" info={infoBox}/>}
+      {infoBox && <InfoBox className="infoBox" info={infoBox} ></InfoBox>}
+     
         
     </div>
   )

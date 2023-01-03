@@ -1,15 +1,13 @@
 import React, {useState} from 'react';
-
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import './Map.css'
 
 
 
 const InfoBox = ({info}) => {
    
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+ const [infoBox, setInfoBox] = useState(null)
 
   return (
     <>
@@ -17,7 +15,7 @@ const InfoBox = ({info}) => {
           <header>Crime Info</header>
         
         <div>
-            <ul>
+            
             <p>CRIME: <strong>{info.title}</strong></p>
             <p>ID: <strong>{info.id}</strong></p>
             
@@ -35,14 +33,9 @@ const InfoBox = ({info}) => {
             <p>NEIGHBORHOOD: <strong>{info.neighborhood}</strong></p>
             
 
-            </ul>
+            
         </div>
-        <footer>
-         
-          <button variant="primary" onCpck={handleClose}>
-            Close
-          </button>
-        </footer>
+        
       </div>
     </>        
 

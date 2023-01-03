@@ -1237,6 +1237,11 @@
     "minimatch" "^3.1.2"
     "strip-json-comments" "^3.1.1"
 
+"@fontsource/poppins@^4.5.10":
+  "integrity" "sha512-oYZVHsnlwV3VWM1SE/m6SUxVh0QLk5+2wB+lBiXcI7N/0KVQWmV9YykaPqfJHBLvmdya+MAOnv+BQHeLU1vOOw=="
+  "resolved" "https://registry.npmjs.org/@fontsource/poppins/-/poppins-4.5.10.tgz"
+  "version" "4.5.10"
+
 "@googlemaps/js-api-loader@^1.7.0", "@googlemaps/js-api-loader@1.15.1", "@googlemaps/js-api-loader@github:googlemaps/js-api-loader":
   "resolved" "git+ssh://git@github.com/googlemaps/js-api-loader.git#947b17b4d5bcedb56757c9c866e34b9c17c01c11"
   "version" "1.15.1"

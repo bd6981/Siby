@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fontsource/poppins": "^4.5.10",
     "@googlemaps/js-api-loader": "github:googlemaps/js-api-loader",
     "@mapbox/point-geometry": "github:mapbox/point-geometry",
     "@react-google-maps/api": "^2.17.1",

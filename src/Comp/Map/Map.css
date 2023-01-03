@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 .map-main {
   
     height: 70vh;
@@ -6,13 +9,14 @@
   }
 body {
   margin: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Poppins', sans-serif, 500;
 }
 
 	.cluster-marker {
-  color: #fff;
-  background: #1978c8;
-  border-radius: 50%;
+  color: white;
+  background: rgba(22, 18, 200, 240);
+  font-size: 12px;
+  border-radius: 60%;
   padding: 10px;
   display: flex;
   justify-content: center;
@@ -30,4 +34,5 @@ body {
   font-size: 10px;
   font-size: 18px;
   color:white;
+  font-family: 'Poppins', sans-serif, 500;
 }
