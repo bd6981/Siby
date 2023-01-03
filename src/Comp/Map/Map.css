@@ -3,36 +3,44 @@
 
 .map-main {
   
-    height: 70vh;
-    width: 99.5vw;
-    position: relative;
+  height: 70vh;
+  width: 99.5vw;
+  position: relative;
+  border-radius:2px, white;
   }
 body {
+
   margin: 0;
   font-family: 'Poppins', sans-serif, 500;
+  background: black;
 }
 
-	.cluster-marker {
+.cluster-marker {
+
   color: white;
-  background: rgba(22, 18, 200, 240);
+  background: rgba(22, 140, 280, 240);
+  opacity:80%;
   font-size: 12px;
   border-radius: 60%;
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(10px);
 }
 .infoBox {
+
   position: absolute;
-  top: 40px;
+  top: 9px;
   right: 50px;
   width: 400px;
   min-height: 200px;
   padding: 20px;
-  background-color: black;
+  /* background-color: black; */
   border-radius: 10px;
   font-size: 10px;
   font-size: 18px;
-  color:white;
+  color: black;
   font-family: 'Poppins', sans-serif, 500;
+  backdrop-filter: blur(10px);
 }
