@@ -24,7 +24,7 @@ const InfoBox = ({info}) => {
             <li>DATE: <strong>{info.date}</strong></li>
             <li>OCCURED ON A: <strong>{info.day}</strong></li>
             
-            <li>TIME: <strong>{info.occur_time}</strong></li>
+            <li>TIME: <strong>{info.time}</strong></li>
             <li>ON SCENE DATE: <strong>{info.osdate}</strong></li>
             <li>ON SCENE TIME: <strong>{info.ostime}</strong></li>
             <li>BEAT: <strong>{info.beat}</strong></li>
