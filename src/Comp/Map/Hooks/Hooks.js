@@ -27,13 +27,13 @@ export function ContextProvider({ children }) {
 }
 import { createStore, action } from "easy-peasy"
 const EasyPeasy = createStore({
-    authorized: false,
-    setAuthorized: action((state, payload) => {
-        state.authorized = true;
+    greenLight: false,
+    setGreenLight: action((state, payload) => {
+        state.greenLight = true;
 
     }),
-    setUnauthorized: action((state, payload) => {
-        state.authorized = false;
+    setRedLight: action((state, payload) => {
+        state.greenLight = false;
     })
 });
 export default EasyPeasy
