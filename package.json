@@ -1,29 +1,19 @@
 {
-  "name": "siby",
+  "name": "crime-map",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fontsource/poppins": "^4.5.10",
-    "@googlemaps/js-api-loader": "github:googlemaps/js-api-loader",
-    "@mapbox/point-geometry": "github:mapbox/point-geometry",
-    "@react-icons/all-files": "^4.1.0",
+    "@iconify/icons-game-icons": "^1.2.1",
+    "@iconify/react": "^4.0.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "asyncawait": "^3.0.0",
     "dotenv": "^16.0.3",
-    "eventemitter3": "^5.0.0",
-    "google-map-marker": "^1.2.3",
     "google-map-react": "^2.2.0",
-    "prop-types": "^15.8.1",
     "react": "^17.0.2",
-    "react-bootstrap": "^2.7.0",
-    "react-dom": "^17.0.1",
+    "react-dom": "^17.0.2",
     "react-icons": "^4.7.1",
-    "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
-    "react-simple-maps": "^3.0.0",
-    "supercluster": "^7.1.5",
     "use-supercluster": "^0.4.0",
     "web-vitals": "^2.1.4"
   },
@@ -50,10 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@iconify/icons-emojione": "^1.2.5",
-    "@iconify/icons-game-icons": "^1.2.1",
-    "@iconify/react": "^4.0.1"
   }
 }

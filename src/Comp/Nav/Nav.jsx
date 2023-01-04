@@ -5,7 +5,7 @@ import {AiTwotoneHome} from 'react-icons/ai'
 import {FcAbout} from 'react-icons/fc'
 import { useState } from 'react'
 import Info from './Info'
-import { Link } from "react-router-dom";
+
 
 const Nav = () => {
   const [activeNav, setActiveNav] = useState("#")
