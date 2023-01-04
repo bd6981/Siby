@@ -11,6 +11,26 @@ export default function Login() {
         email: "",
         password: "",
     });
+   
+        const handleChange = (event) => {
+          setFields({ [event.target.name]: event.target.value });
+        };
+
+        const handleSubmit = async (event) => {
+          event.preventDefault();
+            try {
+                const user = await signInWithEmailAndPassword(
+                    firebaseService.auth,
+                    email,
+                    password
+                );
+                if (user) {
+                    setAuthorized();
+                    navigate("/");
+              
+                }
+            
+        };
 
     return (
         <main>
