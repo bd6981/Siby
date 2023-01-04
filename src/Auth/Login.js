@@ -36,7 +36,10 @@ export default function Login() {
     };
 
         return (
-          <main>
+          <div>
+            {location.state && location.state.message ? (
+              <p style={{ color: "blue" }}>{location.state.message}</p>
+            ) : null}
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
               <div>
@@ -50,7 +53,7 @@ export default function Login() {
                   onChange={handleChange}
                 />
               </div>
-              <div>
+              <div style={{ marginTop: "1rem" }}>
                 <label htmlFor="password">Password</label>
               </div>
               <div>
@@ -61,10 +64,11 @@ export default function Login() {
                   onChange={handleChange}
                 />
               </div>
-              <div>
+              {error ? <p style={{ color: "red" }}>Error: {error}</p> : null}
+              <div style={{ marginTop: "1rem" }}>
                 <button type="submit">Login</button>
               </div>
             </form>
-          </main>
+          </div>
         );
     }
