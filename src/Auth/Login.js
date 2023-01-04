@@ -14,49 +14,57 @@ export default function Login() {
     const [error, setError] = useState("");
       const setAuthorized = useStoreActions((actions) => actions.setAuthorized);
         const handleChange = (event) => {
-          setFields({ [event.target.name]: event.target.value });
+          setFields({...fields, [event.target.name]: event.target.value });
         };
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
-        try {
-            const user = await signInWithEmailAndPassword(
-                firebaseService.auth,
-                email,
-                password
-            );
-            if (user) {
-                setAuthorized();
-                navigate("/");
-              
-            }
-            
-        };
+      event.preventDefault();
+      try {
+        const user = await signInWithEmailAndPassword(
+          firebaseService.auth,
+          fields.email,
+          fields.password
+        );
+        if (user) {
+          setAuthorized();
+          navigate("/");
+        }
+      } catch (err) {
+        console.log(err);
+        setError("try again");
+      }
+    };
 
         return (
-            <main>
-                <h1>Login</h1>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="email">Email Address</label>
-                    </div>
-                    <div>
-                        <input
-                            type="email"
-                            name="email" />
-                    </div>
-                    <div>
-                        <label htmlFor="password">Password</label>
-                    </div>
-                    <div>
-                        <input
-                            type="password"
-                            name="password" />
-                    </div>
-                    <div>
-                        <button type="submit">Login</button>
-                    </div>
-                </form>
-            </main>
-        )
+          <main>
+            <h1>Login</h1>
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label htmlFor="email">Email Address</label>
+              </div>
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  value={fields.password}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="password">Password</label>
+              </div>
+              <div>
+                <input
+                  type="password"
+                  name="password"
+                  value={fields.password}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <button type="submit">Login</button>
+              </div>
+            </form>
+          </main>
+        );
     }
