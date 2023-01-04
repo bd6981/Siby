@@ -12,13 +12,29 @@ import RedLight from "../Auth/RedLight";
 import GreenLight from "../Auth/GreenLight";
 
 function App() {
-  const { setEventData, reRenderMarkers } = useMainContext();
+  // const { setEventData, reRenderMarkers } = useMainContext();
   const [loading, setLoading] = useState(false);
-  const [renderEvent, setRenderEvent] = useState([]);
+  // const [renderEvent, setRenderEvent] = useState([]);
   const greenLight = useStoreState((state) => state.greenLight);
   const setGreenLight = useStoreActions((actions) => actions.setGreenLight);
-  const setRedLight = useStoreActions((actions) => actions.setRedLight
-    );
+  const setRedLight = useStoreActions((actions) => actions.setRedLight);
+
+    const authListener = () => {
+      firebaseConfig.auth.onAuthStateChanged(async (user) => {
+        if (!user) {
+          setLoading(false);
+          return setRedLight();
+        }
+
+        setLoading(false);
+        return setGreenLight();
+      });
+    };
+
+    useEffect(() => {
+      authListener();
+    }, [authListener]);
+
 
   return (
     <div className="App">
