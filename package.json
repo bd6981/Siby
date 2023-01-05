@@ -14,10 +14,13 @@
     "google-map-react": "^2.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-firebase-auth-hooks": "^1.0.0",
     "react-icons": "^4.7.1",
     "react-router": "^6.6.1",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
+    "semantic-ui-css": "^2.5.0",
+    "semantic-ui-react": "^2.1.4",
     "use-supercluster": "^0.4.0",
     "web-vitals": "^2.1.4"
   },

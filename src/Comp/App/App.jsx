@@ -1,30 +1,36 @@
-import './App.css';
-import Header from '../Header/Header'
-import GMap from '../Map/GMap'
-import Nav from '../Nav/Nav'
-import Footer from '../Footer/Footer'
-import React, { useState, useEffect } from 'react'
-import { useMainContext } from '../Map/Hooks/Hooks'
-import Loader from './Loader'
-
+import React from 'react'
+import 'firebase/compat/auth';
+import { Routes, Route} from 'react-router-dom'
+import HomePage from '../Auth/HomePage';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import Login from '../Auth/Login';
+import Signup from "../Auth/Signup";
 
 
 function App() {
-  // const { setEventData, reRenderMarkers } = useMainContext();
-  // const [loading, setLoading] = useState(false)
-  // const [renderEvent, setRenderEvent] = useState([])
-
 
 
   return (
     <div className="App">
-      <Header />
-      <GMap /> 
-      
-      <Nav/>
-      <Footer/>
+      <div>
+        <main>
+          <Routes>
+            <Header />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/homepage" element={<HomePage />} />
+            <Footer />
+          </Routes>
+        </main>
+      </div>
     </div>
   );
 }
+export default App; 
 
-export default App;
+
+
+
+

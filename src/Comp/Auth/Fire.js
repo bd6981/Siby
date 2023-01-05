@@ -1,16 +1,17 @@
-// import { initializeApp } from "firebase/app";
-// import { getAuth } from "firebase/auth";
-// import React from "react";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCC5ffQsPsMzxkLEcG2a0kWLW8YSQLvsMY",
-//   authDomain: "siby-crimemap.firebaseapp.com",
-//   projectId: "siby-crimemap",
-//   storageBucket: "siby-crimemap.appspot.com",
-//   messagingSenderId: "540033710475",
-//   appId: "1:540033710475:web:5c16d9ff0a63727459d78e",
-//   measurementId: "G-H5L2NQ090N",
-// };
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBzUi6RgRt84dmp6ojX00l7ahqtwEul45E",
+  authDomain: "my-map-373723.firebaseapp.com",
+  projectId: "my-map-373723",
+  storageBucket: "my-map-373723.appspot.com",
+  messagingSenderId: "936996344950",
+  appId: "1:936996344950:web:f48359287f65558eeafb57",
+};
 
-// export default initializeApp(firebaseConfig);
-
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
