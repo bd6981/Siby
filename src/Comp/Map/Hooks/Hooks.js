@@ -1,4 +1,3 @@
-import { createStore } from 'easy-peasy';
 import React, { useContext, useState } from 'react'
 
 const mainContext = React.createContext();
@@ -10,6 +9,7 @@ export function ContextProvider({ children }) {
     const [eventData, setEventData] = useState([])
     const [selectedEvent, setSelectedEvent] = useState(null)
     const [reRenderMarkers, setReRenderMarkers] = useState(null)
+    const [authorized, setAuthorized] = useState(null)
 
     const value = {
         eventData,
@@ -18,6 +18,8 @@ export function ContextProvider({ children }) {
         setSelectedEvent,
         reRenderMarkers,
         setReRenderMarkers,
+        authorized,
+        setAuthorized
     }
     return (
         <mainContext.Provider value={value}>
@@ -25,15 +27,3 @@ export function ContextProvider({ children }) {
         </mainContext.Provider>
     )
 }
-import { createStore, action } from "easy-peasy"
-const EasyPeasy = createStore({
-    greenLight: false,
-    setGreenLight: action((state, payload) => {
-        state.greenLight = true;
-
-    }),
-    setRedLight: action((state, payload) => {
-        state.greenLight = false;
-    })
-});
-export default EasyPeasy

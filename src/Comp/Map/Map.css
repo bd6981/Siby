@@ -3,7 +3,7 @@
 
 .map-main {
   
-  height: 70vh;
+  height: 91vh;
   width: 99.5vw;
   position: relative;
   border-radius:2px, white;
@@ -42,5 +42,8 @@ body {
   font-size: 18px;
   color: black;
   font-family: 'Poppins', sans-serif, 500;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  border-color: black;
+  border: 3px;
+
 }
