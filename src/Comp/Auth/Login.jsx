@@ -17,7 +17,6 @@ import Call from './Call'
 
 const Login = () => {
   const [user, setUser] = React.useState({
-    name: "",
     email: "",
     password: "",
   });

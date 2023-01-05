@@ -12,7 +12,7 @@ export default function SignUp() {
   });
   const [error, setError] = useState("");
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFields({ ...fields, [e.target.name]: e.target.value });
@@ -33,13 +33,13 @@ export default function SignUp() {
         password: fields.password,
         name: fields.name,
       });
-      const message = req.data.success;
-      return navigate("/login", {
-        replace: true,
-        state: {
-          message,
-        },
-      });
+      // const message = req.data.success;
+      // return navigate("/login", {
+      //   replace: true,
+      //   state: {
+      //     message,
+      //   },
+      // });
     } catch (err) {
       const errMessage = err.response.data.error;
       return setError(errMessage);
