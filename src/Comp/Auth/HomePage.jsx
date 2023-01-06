@@ -15,9 +15,8 @@ const HomePage = () => {
   return (
     <div className="HomePage">
       <Header />
-    
+      <Nav/>
       {!loading ? <GMap eventData={renderEvent} /> : <Loader />}
-
       <Footer />
     </div>
   );

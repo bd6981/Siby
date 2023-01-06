@@ -51,7 +51,7 @@ export default function SignUp() {
       );
       const message = req.data.success;
       console.log(req)
-          return navigate("./homepage", {
+          return navigate("./login/homepage", {
             replace: true,
             state: {
               message,
