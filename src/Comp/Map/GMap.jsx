@@ -9,7 +9,7 @@ import { Icon } from "@iconify/react";
 import robberIcon from "@iconify/icons-game-icons/robber";
 import InfoBox from "./InfoBox";
 
-
+require("dotenv").config();
 export default function GMap({ center, eventData, lat, lng }) {
   const [zoom, setZoom] = useState(1);
   const mapRef = useRef();
@@ -20,7 +20,7 @@ export default function GMap({ center, eventData, lat, lng }) {
   const [loading, setLoading] = useState(false);
   const [renderEvent, setRenderEvent] = useState([]);
   const Marker = ({ children }) => children;
-  const { REACT_APP_GOOGLE_MAPS_API_KEY } = process.env;
+  const  REACT_APP_GOOGLE_MAPS_API_KEY  = process.env;
 
   useEffect(() => {
     const fetchEvents = async () => {
