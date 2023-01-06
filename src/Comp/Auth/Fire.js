@@ -2,10 +2,10 @@
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
+require("dotenv").config();
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.REACT_API_KEY,
+  apiKey: "AIzaSyBzUi6RgRt84dmp6ojX00l7ahqtwEul45E",
   authDomain: "my-map-373723.firebaseapp.com",
   projectId: "my-map-373723",
   storageBucket: "my-map-373723.appspot.com",
