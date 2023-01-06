@@ -1,13 +1,7 @@
-import {
-  Button,
-  Form,
-  Grid,
-  Header,
-  Image,
-  Message,
-  Segment,
-} from "semantic-ui-react";
-import myImage from "./siby.png";
+
+import './Login.css'
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import myImage from "./siby.png"
 import "semantic-ui-css/semantic.min.css";
 import {
   getAuth,
@@ -16,74 +10,79 @@ import {
   signOut,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
+import firebaseConfig from "./Fire.js"
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import Call from './Call'
+import Signup from './Signup'
+import {Link} from 'react-router-dom'
 
 const Login = () => {
   const [user, setUser] = React.useState({
     email: "",
     password: "",
   });
+    const provider = new GoogleAuthProvider();
+    provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
+    const auth = getAuth();
 
-
-  
-  const provider = new GoogleAuthProvider();
-  provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
-  const auth = getAuth();
-
-  const [authorizedUser, setAuthorizedUser] = useState(
-    false || sessionStorage.getItem("accessToken")
-  );
+    const [authorizedUser, setAuthorizedUser] = useState(
+      false || sessionStorage.getItem("accessToken")
+    );
   const [email, password] = useState(
     false || sessionStorage.getItem("accessToken")
   );
-  const navigate = useNavigate();
   const signInwithGoogle = () => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      });
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        const user = result.user;
-        if (user) {
-          user.getIdToken().then((tkn) => {
-            sessionStorage.setItem("accessToken", tkn);
-            setAuthorizedUser(true);
-             return navigate("/login/homepage", {
-               replace: true
-              
-             });
-          });
-        }
-        console.log(user);
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.customData.email;
-        const credential = GoogleAuthProvider.credentialFromError(error);
-      });
-  };
-  const logoutUser = () => {
-    signOut(auth)
-      .then(() => {
-        sessionStorage.clear();
-        setAuthorizedUser(false);
-        alert("Logged Out Successfully");
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  };
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+        });
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+          // The signed-in user info.
+          const user = result.user;
+          if (user) {
+            user.getIdToken().then((tkn) => {
+              // set access token in session storage
+              sessionStorage.setItem("accessToken", tkn);
+              setAuthorizedUser(true);
+            });
+          }
+          console.log(user);
+        })
+        .catch((error) => {
+          // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // The email of the user's account used.
+          const email = error.customData.email;
+          // The AuthCredential type that was used.
+          const credential = GoogleAuthProvider.credentialFromError(error);
+        });
+    };
+  	    const logoutUser = () => {
+          signOut(auth)
+            .then(() => {
+              // clear session storage
+              sessionStorage.clear();
+              setAuthorizedUser(false);
+              // window.location.replace("/");
+              alert("Logged Out Successfully");
+            })
+            .catch((error) => {
+              // An error happened.
+              alert(error);
+            });
+        };
 
   return (
     <Grid
@@ -97,7 +96,7 @@ const Login = () => {
             src={myImage}
             style={{ height: "25vh", width: "20vw", textAlign: "center" }}
           />
-          <h1>Log-in to your account</h1>
+          <h5>Log-in to your account</h5>
         </Header>
         <Form size="large">
           <Segment stacked>
@@ -134,14 +133,17 @@ const Login = () => {
         </Form>
 
         <Message>
-          <Link to="/login/signup">
-            New to us?
-            </Link >
-          
-          
+          New to us? <Button path="/login"
+            element={<S? />}>
         </Message>
       </Grid.Column>
     </Grid>
   );
-};
-export default Login;
+}
+export default Login
+
+
+
+ 
+
+
