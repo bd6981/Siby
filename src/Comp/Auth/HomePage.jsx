@@ -15,11 +15,12 @@ const HomePage = () => {
   return (
     <div className="HomePage">
       <Header />
-      {!loading ? <GMap eventData={renderEvent} /> : <Loader />} 
-      <Nav />
+    
+      {!loading ? <GMap eventData={renderEvent} /> : <Loader />}
+
       <Footer />
     </div>
   );
-}
+};
 
 export default HomePage;

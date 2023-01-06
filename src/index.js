@@ -2,16 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./Comp/App/App";
 import { ContextProvider } from './Comp/Map/Hooks/Hooks'
+import { BrowserRouter as Routers } from "react-router-dom";
 
 require("dotenv").config();
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Routers>
     <ContextProvider>
   
       <App />
    
     </ContextProvider>
-  </React.StrictMode>,
+  </Routers>,
   document.getElementById("root")
 );

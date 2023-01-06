@@ -1,7 +1,13 @@
-
-import './Login.css'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
-import myImage from "./siby.png"
+import {
+  Button,
+  Form,
+  Grid,
+  Header,
+  Image,
+  Message,
+  Segment,
+} from "semantic-ui-react";
+import myImage from "./siby.png";
 import "semantic-ui-css/semantic.min.css";
 import {
   getAuth,
@@ -10,78 +16,76 @@ import {
   signOut,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
-import firebaseConfig from "./Fire.js"
+import firebaseConfig from "./Fire.js";
 import React, { useState } from "react";
-import Call from './Call'
-  import Signup from './Signup'
+import Call from "./Call";
+import Signup from "./Signup";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [user, setUser] = React.useState({
     email: "",
     password: "",
   });
-    const provider = new GoogleAuthProvider();
-    provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
-    const auth = getAuth();
 
-    const [authorizedUser, setAuthorizedUser] = useState(
-      false || sessionStorage.getItem("accessToken")
-    );
+
+  
+  const provider = new GoogleAuthProvider();
+  provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
+  const auth = getAuth();
+
+  const [authorizedUser, setAuthorizedUser] = useState(
+    false || sessionStorage.getItem("accessToken")
+  );
   const [email, password] = useState(
     false || sessionStorage.getItem("accessToken")
   );
+  const navigate = useNavigate();
   const signInwithGoogle = () => {
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-          // ...
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-        });
-      signInWithPopup(auth, provider)
-        .then((result) => {
-          // This gives you a Google Access Token. You can use it to access the Google API.
-          const credential = GoogleAuthProvider.credentialFromResult(result);
-          const token = credential.accessToken;
-          // The signed-in user info.
-          const user = result.user;
-          if (user) {
-            user.getIdToken().then((tkn) => {
-              // set access token in session storage
-              sessionStorage.setItem("accessToken", tkn);
-              setAuthorizedUser(true);
-            });
-          }
-          console.log(user);
-        })
-        .catch((error) => {
-          // Handle Errors here.
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // The email of the user's account used.
-          const email = error.customData.email;
-          // The AuthCredential type that was used.
-          const credential = GoogleAuthProvider.credentialFromError(error);
-        });
-    };
-  	    const logoutUser = () => {
-          signOut(auth)
-            .then(() => {
-              // clear session storage
-              sessionStorage.clear();
-              setAuthorizedUser(false);
-              // window.location.replace("/");
-              alert("Logged Out Successfully");
-            })
-            .catch((error) => {
-              // An error happened.
-              alert(error);
-            });
-        };
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        if (user) {
+          user.getIdToken().then((tkn) => {
+            sessionStorage.setItem("accessToken", tkn);
+            setAuthorizedUser(true);
+             return navigate("/login/homepage", {
+               replace: true
+              
+             });
+          });
+        }
+        console.log(user);
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+      });
+  };
+  const logoutUser = () => {
+    signOut(auth)
+      .then(() => {
+        sessionStorage.clear();
+        setAuthorizedUser(false);
+        alert("Logged Out Successfully");
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
 
   return (
     <Grid
@@ -90,12 +94,12 @@ const Login = () => {
       marginBottom="40%"
       verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="#2d2f63" textAlign="center">
+        <Header as="h2" color="green" textAlign="center">
           <Image
             src={myImage}
             style={{ height: "25vh", width: "20vw", textAlign: "center" }}
           />
-          <h5>Log-in to your account</h5>
+          <h1>Log-in to your account</h1>
         </Header>
         <Form size="large">
           <Segment stacked>
@@ -113,7 +117,7 @@ const Login = () => {
               type="password"
             />
 
-            <Button color="#2d2f63" fluid size="large">
+            <Button color="green" fluid size="large">
               Login
             </Button>
           </Segment>
@@ -132,46 +136,14 @@ const Login = () => {
         </Form>
 
         <Message>
-          New to us? <Button><Signup/></Button>
+          <Link to="/login/signup">
+            New to us?
+            </Link >
+          
+          
         </Message>
       </Grid.Column>
     </Grid>
   );
-}
-export default Login
-    // <div>
-    //   <main>
-    //     <h1>Sign In</h1>
-    //     <form>
-    //       <div>
-    //         <label >Email Address</label>
-    //       </div>
-    //       <div>
-    //         <input type="email" name="email" required />
-    //       </div>
-    //       <div style={{ marginTop: "1rem" }}>
-    //         <label >Password</label>
-    //       </div>
-    //       <div>
-    //         <input type="password" name="password" />
-    //       </div>
-
-    //       <div style={{ marginTop: "1rem" }}>
-    //         <button type="submit">Sign In</button>
-    //         <h2>Welcome</h2>
-    //         <button
-    //          >
-    //           Login with Google
-    //         </button>
-    //         Logged in as
-            
-    //       </div>
-    //     </form>
-    //   </main>
-    // </div>
-
-
-
- 
-
-
+};
+export default Login;

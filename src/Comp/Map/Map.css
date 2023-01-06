@@ -2,11 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 .map-main {
-  
-  height: 91vh;
-  width: 99.5vw;
+  display: flex;
+  height: 95vh;
+  width: 100vw;
   position: relative;
-  border-radius:2px, white;
+ 
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0;
+  
+ 
   }
 body {
 
@@ -21,8 +27,8 @@ body {
   background: rgba(22, 140, 280, 240);
   opacity:80%;
   font-size: 12px;
-  border-radius: 60%;
-  padding: 10px;
+  border-radius: 50%;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,9 +37,9 @@ body {
 .infoBox {
 
   position: absolute;
-  top: 9px;
+  top: 20px;
   right: 50px;
-  width: 400px;
+  width: 300px;
   min-height: 200px;
   padding: 20px;
   /* background-color: black; */
@@ -45,5 +51,6 @@ body {
   backdrop-filter: blur(20px);
   border-color: black;
   border: 3px;
+
 
 }
