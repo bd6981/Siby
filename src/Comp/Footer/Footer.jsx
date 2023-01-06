@@ -7,16 +7,18 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="item2">
-          <p>Created by: Brittany Davis</p>
-          <a href="http://github.com/bd6981" target="_blank" className="item1">
-            <BsGithub />
+    
+          <a href="http://github.com/bd6981" className="item1">
+            <BsGithub size="20px" />
           </a>
+
           <a
             href="http://www.linkedin.com/in/brittany~davis/"
-            target="_blank"
+           
             className="item1">
-            <AiOutlineLinkedin />
+            <AiOutlineLinkedin size="20px" />
           </a>
+
         </div>
       </div>
     </footer>

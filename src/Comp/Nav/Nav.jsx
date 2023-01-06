@@ -1,14 +1,11 @@
 import React from 'react'
 import "./Nav.css"
-import {BiUserPin} from 'react-icons/bi'
-import {AiTwotoneHome} from 'react-icons/ai'
 import {FcAbout} from 'react-icons/fc'
 import { useState } from 'react'
 
 
 const Nav = () => {
   const [activeNav, setActiveNav] = useState("#")
-  const [modalShow, setModalShow] = React.useState(false);
   
   return (
     <nav>

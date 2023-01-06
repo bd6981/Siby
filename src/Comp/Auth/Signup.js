@@ -6,9 +6,7 @@ import {
   Button,
   Grid,
   Header,
-  Label,
   Image,
-  Message,
   Segment,
 } from "semantic-ui-react";
 import myImage from "./siby.png";
@@ -22,7 +20,7 @@ export default function SignUp() {
     password: "",
     confirmPassword: "",
   });
-  const [error, setError] = useState("");
+  const [setError] = useState("");
 
   const navigate = useNavigate();
 
@@ -51,11 +49,12 @@ export default function SignUp() {
       );
       const message = req.data.success;
       console.log(req)
-          return navigate("./login/homepage", {
+          return navigate("./login/signup/homepage", {
             replace: true,
             state: {
-              message,
-            },
+              message: message,
+            }
+            
           });
     } catch (err) {
       const errMessage = err.response.data.error;

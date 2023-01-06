@@ -9,6 +9,7 @@ import { Icon } from "@iconify/react";
 import robberIcon from "@iconify/icons-game-icons/robber";
 import InfoBox from "./InfoBox";
 
+
 export default function GMap({ center, eventData, lat, lng }) {
   const [zoom, setZoom] = useState(1);
   const mapRef = useRef();

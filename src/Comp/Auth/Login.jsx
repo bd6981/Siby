@@ -21,7 +21,7 @@ import firebaseConfig from "./Fire.js";
 import React, { useState } from "react";
 import Call from "./Call";
 import Signup from "./Signup";
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 const Login = () => {
   const [user, setUser] = React.useState({
@@ -104,7 +104,7 @@ const Login = () => {
       marginBottom="40%"
       verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="#2d2f63" textAlign="center">
+        <Header as="h2" color="violet" textAlign="center">
           <Image
             src={myImage}
             style={{ height: "25vh", width: "20vw", textAlign: "center" }}
@@ -127,7 +127,7 @@ const Login = () => {
               type="password"
             />
 
-            <Button color="#2d2f63" fluid size="large">
+            <Button color="violet" fluid size="large">
               Login
             </Button>
           </Segment>
@@ -146,10 +146,7 @@ const Login = () => {
         </Form>
 
         <Message>
-          New to us?{" "}
-          <Button>
-            <Signup />
-          </Button>
+          <Link to="/login/signup">New to us?</Link>
         </Message>
       </Grid.Column>
     </Grid>
