@@ -16,11 +16,9 @@ import {
   signOut,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
-import firebaseConfig from "./Fire.js";
 import React, { useState } from "react";
-import Call from "./Call";
-import Signup from "./Signup";
 import { Link, useNavigate } from "react-router-dom";
+import Call from './Call'
 
 const Login = () => {
   const [user, setUser] = React.useState({

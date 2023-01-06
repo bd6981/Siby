@@ -4,7 +4,7 @@ import App from "./Comp/App/App";
 import { ContextProvider } from './Comp/Map/Hooks/Hooks'
 import { BrowserRouter as Routers } from "react-router-dom";
 
-require("dotenv").config();
+
 
 ReactDOM.render(
   <Routers>

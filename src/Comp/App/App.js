@@ -2,8 +2,6 @@ import React from 'react'
 import 'firebase/compat/auth';
 
 import HomePage from '../Auth/HomePage';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import Login from '../Auth/Login';
 import Signup from "../Auth/Signup";
 import { Route, Routes } from "react-router-dom";
