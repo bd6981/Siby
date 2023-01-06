@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./Comp/App/App";
 import { ContextProvider } from './Comp/Map/Hooks/Hooks'
 
+require("dotenv").config();
 
 ReactDOM.render(
   <React.StrictMode>
