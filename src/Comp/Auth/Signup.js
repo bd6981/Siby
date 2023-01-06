@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 
 
@@ -14,9 +14,14 @@ export default function SignUp() {
 
   // const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setFields({ ...fields, [e.target.name]: e.target.value });
-  };
+  const handleChange = (value) => {
+    return setFields((field) => {
+      return {...field, ...value}
+    })
+      
+}
+
+
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,23 +33,20 @@ export default function SignUp() {
     }
 
     try {
-      const req = await axios.post("http://localhost:4000/api/user", {
-        email: fields.email,
-        password: fields.password,
-        name: fields.name,
-      });
-      // const message = req.data.success;
-      // return navigate("/login", {
-      //   replace: true,
-      //   state: {
-      //     message,
-      //   },
-      // });
+      const req = await axios.post("http://localhost:4000/api/user", fields);
+      const message = req.data.success;
+      console.log(req)
+      //     return navigate("", {
+      //       replace: true,
+      //       state: {
+      //         message,
+      //       },
+      //     });
     } catch (err) {
       const errMessage = err.response.data.error;
       return setError(errMessage);
     }
-  };
+  }
 
   return (
     <div id="signup">
@@ -57,8 +59,7 @@ export default function SignUp() {
           <input
             type="email"
             name="email"
-            value={fields.email}
-            onChange={handleChange}
+            onChange={(e) => handleChange({email: e.target.value})}
             required
           />
         </div>
@@ -67,10 +68,9 @@ export default function SignUp() {
         </div>
         <div>
           <input
-            type="text"
+            type="name"
             name="name"
-            value={fields.name}
-            onChange={handleChange}
+            onChange={(e) => handleChange({name: e.target.value})}
             required
           />
         </div>
@@ -81,8 +81,7 @@ export default function SignUp() {
           <input
             type="password"
             name="password"
-            value={fields.password}
-            onChange={handleChange}
+            onChange={(e) => handleChange({password: e.target.value})}
             required
           />
         </div>
@@ -93,8 +92,7 @@ export default function SignUp() {
           <input
             type="password"
             name="confirmPassword"
-            value={fields.confirmPassword}
-            onChange={handleChange}
+            onChange={(e) => handleChange({confirmPassword: e.target.value})}
             required
           />
         </div>

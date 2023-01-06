@@ -1,10 +1,10 @@
 
-function Info(props) {
-  return (
-    <div>hey</div>
-  )
-}
-export default Info
+// function Info(props) {
+//   return (
+//     <div>hey</div>
+//   )
+// }
+// export default Info
 
   // useEffect(() => {
   //   fetch("crimeData.json"

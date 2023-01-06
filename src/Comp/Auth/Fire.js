@@ -5,7 +5,7 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBzUi6RgRt84dmp6ojX00l7ahqtwEul45E",
+  apiKey: process.env.REACT_API_KEY,
   authDomain: "my-map-373723.firebaseapp.com",
   projectId: "my-map-373723",
   storageBucket: "my-map-373723.appspot.com",
