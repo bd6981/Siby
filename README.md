@@ -1,4 +1,3 @@
-### Your group members and scrum leader (if applicable) 
 # Siby - Crime Spotter
 ### Know before you go!
 
