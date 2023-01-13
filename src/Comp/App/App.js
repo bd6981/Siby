@@ -1,32 +1,18 @@
-import React from 'react'
-import 'firebase/compat/auth';
-import HomePage from '../Auth/HomePage';
-import Login from '../Auth/Login';
-import Signup from "../Auth/Signup";
-import { Route, Routes } from "react-router-dom";
+import Header from "../Header/Header";
+import GMap from "../Map/GMap";
+import Nav from "../Nav/Nav";
+import Footer from "../Footer/Footer";
+import React from "react";
 
-
-function App() {
-
-
+const HomePage = () => {
   return (
-    <div className="App">
-      <div>
-        <Routes>
-          <Route path="/" element={<Login />} />
-
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/login/homepage" element={<HomePage />}></Route>
-          <Route path="/login/signup" element={<Signup />}></Route>
-          <Route path="/login/signup/homepage" element={<HomePage />}></Route>
-        </Routes>
-      </div>
+    <div className="HomePage">
+      <Header />
+      <Nav />
+      <GMap />
+      <Footer />
     </div>
   );
-}
-export default App; 
+};
 
-
-
-
-
+export default HomePage;

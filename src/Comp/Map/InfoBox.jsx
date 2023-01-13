@@ -7,7 +7,7 @@ const InfoBox = ({info}) => {
     <>
       <div className="infoBox">
         <header>
-          <h2>Crime Info</h2>
+          <h2 >Crime Info</h2>
         </header>
        
         <div>

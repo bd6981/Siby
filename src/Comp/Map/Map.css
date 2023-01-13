@@ -3,7 +3,7 @@
 
 .map-main {
   display: flex;
-  height: 95vh;
+  height: 89vh;
   width: 100vw;
   position: relative;
  
@@ -50,6 +50,12 @@ body {
   backdrop-filter: blur(20px);
   border-color: black;
   border: 3px;
+  text-align: left;
 
 
 }
+header{
+  text-align: center;
+  text-decoration: underline;
+}
+
