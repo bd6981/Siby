@@ -20,9 +20,11 @@ export default function GMap({ center, eventData, lat, lng }) {
   const [loading, setLoading] = useState(false);
   const [renderEvent, setRenderEvent] = useState([]);
   const Marker = ({ children }) => children;
-  const  REACT_APP_GOOGLE_MAPS_API_KEY  = process.env;
+
 
   useEffect(() => {
+  
+
     const fetchEvents = async () => {
       setLoading(true);
       const response = await fetch("../../Data.json");
@@ -33,8 +35,6 @@ export default function GMap({ center, eventData, lat, lng }) {
       setEventData(crimes);
       setRenderEvent(crimes);
       setLoading(false);
-      
-      
     };
     fetchEvents(crimes);
   }, []);
@@ -60,7 +60,9 @@ export default function GMap({ center, eventData, lat, lng }) {
       type: "Point",
       coordinates: [parseFloat(crime.longitude), parseFloat(crime.latitude)],
     },
+  
   }));
+    console.log(points);
   const { clusters, superCluster } = useSuperCluster({
     points,
     bounds,
