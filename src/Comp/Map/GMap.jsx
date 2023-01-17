@@ -26,14 +26,15 @@ export default function GMap({ center, eventData, lat, lng }) {
     const fetchEvents = async () => {
       setLoading(true);
       const response = await fetch("../../Data.json");
-      if (!response.ok) {
-        const message = `An error has occured: ${response.status}`;
-        throw new Error(message);
+      if (response.ok) {
+        const crimes = await response.json();
       }
-      const crimes = await response.json();
+      console.log(crimes)
       setEventData(crimes);
       setRenderEvent(crimes);
       setLoading(false);
+      
+      
     };
     fetchEvents(crimes);
   }, []);
