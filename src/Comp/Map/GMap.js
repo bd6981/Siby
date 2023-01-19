@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import "./Map.css";
 import React from "react";
 import useSuperCluster from "use-supercluster";
-import { useMainContext } from "../Map/Hooks/Hooks";
+import { useMainContext } from "./Hooks/Hooks";
 import crimes from "../../data.json"
 import { Icon } from "@iconify/react";
 import robberIcon from "@iconify/icons-game-icons/robber";
