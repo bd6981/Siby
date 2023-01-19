@@ -4,40 +4,42 @@ import "./Map.css";
 import React from "react";
 import useSuperCluster from "use-supercluster";
 import { useMainContext } from "../Map/Hooks/Hooks";
-import crimes from "../../Data.json";
+import crimes from "../../data.json"
 import { Icon } from "@iconify/react";
 import robberIcon from "@iconify/icons-game-icons/robber";
 import InfoBox from "./InfoBox";
 
-require("dotenv").config();
+
+ const Marker = ({ children }) => children;
+
+
+
 export default function GMap({ center, eventData, lat, lng }) {
   const [zoom, setZoom] = useState(1);
   const mapRef = useRef();
   const [bounds, setBounds] = useState(null);
   const [infoBox, setInfoBox] = useState(null);
-
   const { setEventData, reRenderMarkers } = useMainContext();
   const [loading, setLoading] = useState(false);
   const [renderEvent, setRenderEvent] = useState([]);
-  const Marker = ({ children }) => children;
 
 
   useEffect(() => {
-  
-
     const fetchEvents = async () => {
       setLoading(true);
-      const response = await fetch("../../Data.json");
+      const response = await fetch("./Map/Comp/data.json");
       if (response.ok) {
         const crimes = await response.json();
       }
-      console.log(crimes)
       setEventData(crimes);
       setRenderEvent(crimes);
       setLoading(false);
+
     };
+
     fetchEvents(crimes);
   }, []);
+ 
 
   const points = crimes.map((crime) => ({
     type: "Feature",
@@ -60,9 +62,8 @@ export default function GMap({ center, eventData, lat, lng }) {
       type: "Point",
       coordinates: [parseFloat(crime.longitude), parseFloat(crime.latitude)],
     },
-  
   }));
-    console.log(points);
+
   const { clusters, superCluster } = useSuperCluster({
     points,
     bounds,
