@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./Comp/App/App";
+import App from "./Comp/Map/App";
 import { ContextProvider } from './Comp/Map/Hooks/Hooks'
 import { BrowserRouter as Routers } from "react-router-dom";
 

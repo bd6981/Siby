@@ -1,6 +1,6 @@
 import React from 'react'
 import './Header.css'
-import myImage from '../Auth/siby-logo.png'
+import myImage from '../Auth/img1.png'
 import {
 
  
@@ -15,7 +15,7 @@ const Header = () => {
       <header>
         <Image
           src={myImage}
-          style={{ height: "10vh", width: "50vw", textAlign: "center" }}
+          style={{ height: "13vh", width: "100vw", textAlign: "center" }}
         />
       </header>
     </div>

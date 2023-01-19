@@ -34,7 +34,6 @@ export default function GMap({ center, eventData, lat, lng }) {
       setEventData(crimes);
       setRenderEvent(crimes);
       setLoading(false);
-
     };
 
     fetchEvents(crimes);
@@ -70,7 +69,7 @@ export default function GMap({ center, eventData, lat, lng }) {
     zoom,
     options: { radius: 75, maxZoom: 20 },
   });
-
+  
   return (
     <div className="map-main">
       <GoogleMapReact
