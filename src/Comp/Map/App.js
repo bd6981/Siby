@@ -134,11 +134,10 @@ export default function App({ center, eventData, lat, lng }) {
                     height: `${10 + (pointCount / points.length) * 20}px`,
                   }}
                   onClick={() => {
-                    // const expansionZoom = Math.min(
-                    //   superCluster.getClusterExpansionZoom(cluster.name),
-                    //   20
-                    // );
-                    // mapRef.current.setZoom(expansionZoom);
+                  //   const expansionZoom = Math.min(
+                  //     superCluster.getClusterExpansionZoom(cluster.name)
+                  //   );
+                  //   mapRef.current.setZoom(expansionZoom);
                     // mapRef.current.panTo({ lat: latitude, lng: longitude });
                   }}>
                   {pointCount}
