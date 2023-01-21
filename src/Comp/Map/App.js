@@ -45,20 +45,7 @@ export default function App({ center, eventData, lat, lng }) {
   const [loading, setLoading] = useState(false);
   const [renderEvent, setRenderEvent] = useState([]);
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      setLoading(true);
-      const response = await fetch("./Map/Comp/data.json");
-      if (response.ok) {
-        const crimes = await response.json();
-      }
-      setEventData(crimes);
-      setRenderEvent(crimes);
-      setLoading(false);
-    };
 
-    fetchEvents(crimes);
-  }, []);
 
   const points = crimes.map((crime) => ({
     type: "Feature",
@@ -90,6 +77,20 @@ export default function App({ center, eventData, lat, lng }) {
     options: { radius: 75, maxZoom: 20 },
   });
 
+    useEffect(() => {
+      const fetchEvents = async () => {
+        setLoading(true);
+        const response = await fetch("./Map/Comp/data.json");
+        if (response.ok) {
+          const crimes = await response.json();
+        }
+        setEventData(crimes);
+        setRenderEvent(crimes);
+        setLoading(false);
+      };
+
+      fetchEvents(crimes);
+    }, []);
   return (
     <div className="map-main">
       <GoogleMapReact
