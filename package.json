@@ -7,13 +7,10 @@
     "@iconify/react": "^4.0.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.2.2",
-    "dotenv": "^16.0.3",
-    "firebase": "^9.15.0",
     "google-map-react": "^2.2.0",
+    "node": "^16.13.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-firebase-auth-hooks": "^1.0.0",
     "react-google-places-autocomplete": "^3.4.0",
     "react-icons": "^4.7.1",
     "react-router": "^6.6.1",
@@ -25,11 +22,12 @@
     "use-supercluster": "^0.4.0",
     "web-vitals": "^2.1.4"
   },
-"scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1",
-  "start": "./node_modules/.bin/netlify-lambda serve src",
-  "build": "react-scripts build"
-},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
