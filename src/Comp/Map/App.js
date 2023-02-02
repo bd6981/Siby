@@ -29,7 +29,7 @@ import "./Map.css";
 import React from "react";
 import useSuperCluster from "use-supercluster";
 import { useMainContext } from "./Hooks/Hooks";
-import crimes from "../../data.json";
+import crimes from "./Map/Comp/data.json";
 import { Icon } from "@iconify/react";
 import robberIcon from "@iconify/icons-game-icons/robber";
 import InfoBox from "./InfoBox";
