@@ -3,10 +3,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: rgb(190, 190, 190); 
-    backdrop-filter: blur(50px); 
-    height: 8rem;
-    background-color: #BAC4CA;
+
+ 
+    background-color: #93baa4;
+
+    width: 100%;
+  
 }
 a{
     color: inherit;

@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@iconify/icons-game-icons": "^1.2.1",
-    "@iconify/react": "^4.0.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/user-event": "^13.5.0",
     "google-map-react": "^2.2.0",
@@ -45,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@iconify/icons-fa6-solid": "^1.2.10",
+    "@iconify/react": "^4.1.0"
   }
 }

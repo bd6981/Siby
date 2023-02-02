@@ -15,7 +15,7 @@ const Header = () => {
       <header>
         <Image
           src={myImage}
-          style={{ height: "13vh", width: "100vw", textAlign: "center" }}
+          style={{ height: "15vh", width: "15vw", textAlign: "center" }}
         />
       </header>
     </div>
