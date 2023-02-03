@@ -2,7 +2,7 @@ import React from 'react';
 import './Map.css'
 
 const InfoBox = ({info}) => { 
-//  const [infoBox, setInfoBox] = useState(null)
+
   return (
     <>
       <div className="infoBox">
